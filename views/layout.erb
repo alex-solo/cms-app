@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <title>CMS App</title>
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Sans">
+    <link rel="stylesheet" href="/application.css" type="text/css">
+  </head>
+  <body>
+    <header></header>
+
+    <main>
+
+      <% if session[:message] %>
+        <div>
+          <p class="message"><%= session.delete(:message) %></p>
+        </div>
+      <% end %>
+
+      <%= yield %>
+      
+    </main>
+
+  </body>
+</html>
